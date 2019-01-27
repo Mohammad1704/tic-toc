@@ -1,5 +1,9 @@
 
+body{
+    position: center;
+    text-align: center;
 
+}
 table, th, td  {
     text-align: center;
 }
