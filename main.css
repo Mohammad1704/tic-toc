@@ -4,9 +4,15 @@ body{
     text-align: center;
 
 }
-table, th, td  {
-    text-align: center;
-}
+
 input{
     text-align: center;
+}
+
+tr,td {
+padding: 10px;
+
+    border: 5px ridge black;
+    text-align: center;
+text-align: center;
 }
