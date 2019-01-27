@@ -1,25 +1,36 @@
 
-var table = ['','','',
-             '','','',
-             '','','',]
+// var table = ['','','',
+//              '','','',
+//              '','','',]
 
              // create an object
              // that has the cell id as the key
              // and the value for the key as the value in the cell on the screen
+             var inputTable = { 
+                 0: "tyjojk",
+                 1: "jghojk",
+                 2: "toghjk",
+                 3: "tyhljk",
+                 4: "tyjgk",
+                 5: "tyjjk",
+                 6: "tyhjk",
+                 7: "tghjk",
+                 8: "jghjk",
+                }
 
 var currentUser = 'X'
 // FIND WINNER OF GAME
 var checkResult = function(){
     
     
-  if((table[0] === table[1]) && (table[0] === table[2]) 
-  ||(table[0] === table[4]) && (table[0] === table[8])
-  ||(table[0] === table[3]) && (table[0] === table[6]) 
-    ||(table[1] === table[4]) && (table[1] === table[7])
-    ||(table[2] === table[5]) && (table[2] === table[8])
-    ||(table[3] === table[4]) && (table[3] === table[5])
-    ||(table[6] === table[7]) && (table[6] === table[8])
-    ||(table[2] === table[4]) && (table[2] === table[6]))
+  if((inputTable[0] === inputTable[1]) && (inputTable[0] === inputTable[2]) 
+  ||(inputTable[0] === inputTable[4]) && (inputTable[0] === inputTable[8])
+  ||(inputTable[0] === inputTable[3]) && (inputTable[0] === inputTable[6]) 
+    ||(inputTable[1] === inputTable[4]) && (inputTable[1] === inputTable[7])
+    ||(inputTable[2] === inputTable[5]) && (inputTable[2] === inputTable[8])
+    ||(inputTable[3] === inputTable[4]) && (inputTable[3] === inputTable[5])
+    ||(inputTable[6] === inputTable[7]) && (inputTable[6] === inputTable[8])
+    ||(inputTable[2] === inputTable[4]) && (inputTable[2] === inputTable[6]))
     {
         console.log('win')
     }
@@ -30,6 +41,7 @@ var checkResult = function(){
 
 function onClick(event) {
     $(event.target).text(currentUser);
+    inputTable[event.target.id] = currentUser;
 
     // if statment to switch from X to O  
     if(currentUser === 'X'){
@@ -38,6 +50,9 @@ function onClick(event) {
     }
     else {
         currentUser = 'X'
+    }
+    for(i = 0 ; i<= 9; i++ ){
+    let cellID = $("#" + i);
     }
 }
 
