@@ -3,60 +3,60 @@
 //              '','','',
 //              '','','',]
 
-             // create an object
-             // that has the cell id as the key
-             // and the value for the key as the value in the cell on the screen
-             var inputTable = { 
-                 0: "tyjojk",
-                 1: "jghojk",
-                 2: "toghjk",
-                 3: "tyhljk",
-                 4: "tyjgk",
-                 5: "tyjjk",
-                 6: "tyhjk",
-                 7: "tghjk",
-                 8: "jghjk",
-                }
+// create an object
+// that has the cell id as the key
+// and the value for the key as the value in the cell on the screen
 
+var table = ['','','',
+             '','','',
+             '','','',]
 var currentUser = 'X'
+var turnCount = 0
 // FIND WINNER OF GAME
 var checkResult = function(){
     
     
-  if((inputTable[0] === inputTable[1]) && (inputTable[0] === inputTable[2]) 
-  ||(inputTable[0] === inputTable[4]) && (inputTable[0] === inputTable[8])
-  ||(inputTable[0] === inputTable[3]) && (inputTable[0] === inputTable[6]) 
-    ||(inputTable[1] === inputTable[4]) && (inputTable[1] === inputTable[7])
-    ||(inputTable[2] === inputTable[5]) && (inputTable[2] === inputTable[8])
-    ||(inputTable[3] === inputTable[4]) && (inputTable[3] === inputTable[5])
-    ||(inputTable[6] === inputTable[7]) && (inputTable[6] === inputTable[8])
-    ||(inputTable[2] === inputTable[4]) && (inputTable[2] === inputTable[6]))
+  if((table[0] === table[1]) && (table[0] === table[2] && table[0] !== '') 
+  ||(table[0] === table[4]) && (table[0] === table[8] && table[0] !== '')
+  ||(table[0] === table[3]) && (table[0] === table[6] && table[0] !== '') 
+    ||(table[1] === table[4]) && (table[1] === table[7] && table[1] !== '')
+    ||(table[2] === table[5]) && (table[2] === table[8] && table[2] !== '')
+    ||(table[3] === table[4]) && (table[3] === table[5] && table[3] !== '')
+    ||(table[6] === table[7]) && (table[6] === table[8] && table[6] !== '')
+    ||(table[2] === table[4]) && (table[2] === table[6]) && table[2] !== '')
     {
         console.log('win');
         $('#message').text('you win , good for you :)');
         
-    }
-    else {
-        console.log('it work');
-        $('#message').text('Game over you lose');
+    } else if (turnCount === 9) {
+        $('#message').text('Tie');
+    }else {
+        console.log('u loos');
+        $('#message').text('NExt Turn');
 
     }
 }
 
 function onClick(event) {
-    $(event.target).text(currentUser);
-    inputTable[event.target.id] = currentUser;
+    // if the space is open
+    if (table[event.target.id] === ''){ 
+        turnCount++
+        // add user to space in html
+        $(event.target).text(currentUser);
+        // add user to javascript array
+        table[event.target.id] = currentUser;
+        // check for winner
+        checkResult();
+        // if statment to switch from X to O  
+        if(currentUser === 'X'){
+            currentUser = 'O'
 
-    // if statment to switch from X to O  
-    if(currentUser === 'X'){
-        currentUser = 'O'
-
-    }
-    else {
-        currentUser = 'X'
-    }
-    for(i = 0 ; i<= 9; i++ ){
-    let cellID = $("#" + i);
+        } else {
+            currentUser = 'X'
+        }
+    // else space is not open so do not play
+    } else {
+        $('#message').text('Not honorable player');
     }
 }
 
