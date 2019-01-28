@@ -33,6 +33,8 @@ var checkResult = function(){
     ||(inputTable[2] === inputTable[4]) && (inputTable[2] === inputTable[6]))
     {
         console.log('win')
+
+        
     }
     else {
         console.log('it work')
