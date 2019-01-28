@@ -25,13 +25,18 @@ var checkResult = function(){
     ||(table[6] === table[7]) && (table[6] === table[8] && table[6] !== '')
     ||(table[2] === table[4]) && (table[2] === table[6]) && table[2] !== '')
     {
-        console.log('win');
         $('#message').text('you win , good for you :)');
-        
+
+        $(event.target).off("click");
+        $('.cell').off("click");
+        $(event.target).off("onClick");
+        $('.cell').off("onClick");
+        $(event.target).off("checkResult");
+
+
     } else if (turnCount === 9) {
         $('#message').text('Tie');
     }else {
-        console.log('u loos');
         $('#message').text('NExt Turn');
 
     }
