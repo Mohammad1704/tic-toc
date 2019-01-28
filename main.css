@@ -1,5 +1,5 @@
 
-body { display:flex;
+body { 
   font-size: 16px;
   font-family: "Helvetica", "Arial", sans-serif;
   text-align: center;
@@ -7,50 +7,20 @@ body { display:flex;
 }
 
 input{
-  /* font-size: 80px; */
     text-align: center;
 }
-/* 
-td {
-padding: 30px;
-width: 33.333%;
-    border: 5px solid black;
-    text-align: center;
-text-align: center;
-} */
-
-/* #board {
-    width: 100%;
-  }
-  
-  td:after {
-    content: '';
-    display: block;
-    margin-top: 100%;
-  }  */
 
 
   #board { 
-    /* font-size: 100px; */
-    width: 150px;
+    width: 500px;
     border-collapse: collapse;
+    table-layout: fixed;
 }
   td {
-    width: 33.333%;
     border: 6px solid #222;
-    font-size: 100px;
+    height: 100px;
+  }
 
-    
-  }
-  td::after {
-    content: '';
-    display: block;
-    margin-top: 100%;
-  }
-  td {
-    border: 6px solid #222;
-    
-  }
   td:first-of-type {
     border-left-color: transparent;
     border-top-color: transparent;
