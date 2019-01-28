@@ -32,12 +32,14 @@ var checkResult = function(){
     ||(inputTable[6] === inputTable[7]) && (inputTable[6] === inputTable[8])
     ||(inputTable[2] === inputTable[4]) && (inputTable[2] === inputTable[6]))
     {
-        console.log('win')
-
+        console.log('win');
+        $('#message').text('you win , good for you :)');
         
     }
     else {
-        console.log('it work')
+        console.log('it work');
+        $('#message').text('Game over you lose');
+
     }
 }
 
