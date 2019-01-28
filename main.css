@@ -30,8 +30,10 @@ input{
     table-layout: fixed;
 }
   td {
-    border: 6px solid #222;
-    height: 100px;
+		height: 100px;
+		border: 8px solid #23A6D5;
+    /* color: #23D5AB; */
+    font-size: 40px;
   }
 
   td:first-of-type {
@@ -88,6 +90,7 @@ input{
 
 h1,
 h6 {
+	/* color: #23D5AB; */
 	font-family: 'Open Sans';
 	font-weight: 800;
 	text-align: center;

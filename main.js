@@ -37,7 +37,7 @@ var checkResult = function(){
     } else if (turnCount === 9) {
         $('#message').text('Tie');
     }else {
-        $('#message').text('NExt Turn');
+        $('#message').text('Next Turn');
 
     }
 }
