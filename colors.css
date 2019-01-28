@@ -1,12 +1,4 @@
-
-body { 
-
-  font-size: 16px;
-  font-family: "Helvetica", "Arial", sans-serif;
-  text-align: center;
-  max-width: 500px;
-  margin: auto;
-
+/* body {
 	width: 100wh;
 	height: 90vh;
 	color: #fff;
@@ -16,38 +8,6 @@ body {
 	-moz-animation: Gradient 15s ease infinite;
 	animation: Gradient 15s ease infinite;
 }
-
-
-input{
-    text-align: center;
-}
-
-
-  #board { 
-    width: 500px;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-  td {
-    border: 6px solid #222;
-    height: 100px;
-  }
-
-  td:first-of-type {
-    border-left-color: transparent;
-    border-top-color: transparent;
-  }
-  td:nth-of-type(2) {
-    border-top-color: transparent;
-  }
-  td:nth-of-type(3) {
-    border-right-color: transparent;
-    border-top-color: transparent;
-  }
-  tr:nth-of-type(3) td {
-    border-bottom-color: transparent;
-  }
-
 
 @-webkit-keyframes Gradient {
 	0% {
@@ -94,4 +54,4 @@ h6 {
 	top: 45%;
 	right: 0;
 	left: 0;
-}
+} */
