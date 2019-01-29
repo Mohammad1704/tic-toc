@@ -11,7 +11,14 @@ var table = ['','','',
              '','','',
              '','','',]
 var currentUser = 'X'
-var turnCount = 0
+var turnCount = 0;
+
+// Start with a computer flag
+// When the user plays their turn, check if the computer flag is true
+// If true; play the O move
+// If false; do nothing
+let initialAI = true;
+
 // FIND WINNER OF GAME
 var checkResult = function(){
     
@@ -25,8 +32,7 @@ var checkResult = function(){
     ||(table[6] === table[7]) && (table[6] === table[8] && table[6] !== '')
     ||(table[2] === table[4]) && (table[2] === table[6]) && table[2] !== '')
     {
-        $('#message').text('you win , good for you :)');
-
+        $('#message').text('🎉🎊🎉🎊🎉player ' + currentUser + ' win!! 🎉🎊🎉🎊🎉');
         $(event.target).off("click");
         $('.cell').off("click");
         $(event.target).off("onClick");
@@ -35,7 +41,7 @@ var checkResult = function(){
 
 
     } else if (turnCount === 9) {
-        $('#message').text('Tie');
+        $('#message').text('Tie🛑');
     }else {
         $('#message').text('Next Turn');
 
@@ -53,13 +59,40 @@ function onClick(event) {
         // check for winner
         checkResult();
         // if statment to switch from X to O  
-        if(currentUser === 'X'){
-            currentUser = 'O'
+        //////////////////////////////
+        // if(currentUser === 'X'){
+        //     currentUser = 'O'
 
-        } else {
-            currentUser = 'X'
+        // } else {
+        //     currentUser = 'X'
+        // }
+        /////////////////////////////////
+        // else space is not open so do not play 
+        // Check if computer is playing AI
+
+function initialAI(){
+
+
+        for ( var i=0 ; i < table.length ; i++){
+            if (table[i] === ''){
+                console.log('hi')
+                turnCount++
+                // add user to space in html
+
+            
+                $('#'+i).text('O');
+                // add user to javascript array
+                table[i] = 'O';
+                // check for winner
+                checkResult();
+                // end loop because we found the match
+                break;
+            }
+  
         }
-    // else space is not open so do not play
+    }
+
+    initialAI();
     } else {
         $('#message').text('Not honorable player');
     }
