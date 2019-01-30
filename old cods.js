@@ -105,3 +105,19 @@ if((table[0] === table[1]) && (table[0] === table[2]) ||table[0] === table[4] ==
         console.log('it work')
     }
 }
+
+
+if(currentUser === 'X' ||initialAI){
+    // if(initialAI){
+        // play for O
+        playInitialAI();
+        currentUser = 'O';
+    }
+//     else if 
+//      {
+//         currentUser = 'O'
+//     }
+// } 
+else {
+    currentUser = 'X'
+}

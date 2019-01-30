@@ -11,7 +11,7 @@ var turnCount = 0;
 // If true; play the O move
 // If false; do nothing
 var initialAI = true;
-
+ var gameOver = false;
 
 // FIND WINNER OF GAME
 var checkResult = function(){
@@ -25,7 +25,8 @@ var checkResult = function(){
     ||(table[3] === table[4]) && (table[3] === table[5] && table[3] !== '')
     ||(table[6] === table[7]) && (table[6] === table[8] && table[6] !== '')
     ||(table[2] === table[4]) && (table[2] === table[6]) && table[2] !== '')
-    {
+    { 
+        gameOver = true;
         $('#message').text('🎉🎊🎉🎊🎉player ' + currentUser + ' win!! 🎉🎊🎉🎊🎉');
         $(event.target).off("click");
         $('.cell').off("click");
@@ -56,7 +57,9 @@ function onClick(event) {
         //////////////////////////////
         if(currentUser === 'X'){
             currentUser = 'O'
-            initialAI();
+            if (gameOver === false ){
+                initialAI();
+            }
             currentUser = 'X'
 
         } else {
@@ -65,12 +68,16 @@ function onClick(event) {
         /////////////////////////////////
         // else space is not open so do not play 
         // Check if computer is playing AI
-
+        function getRandomInt() {
+            return Math.floor(Math.random() * Math.floor(table.length));
+          }
+          
 function initialAI(){
 
 
         for ( var i=0 ; i < table.length ; i++){
             if (table[i] === ''){
+                getRandomInt(i);
                 console.log('hi')
                 turnCount++
                 // add user to space in html
