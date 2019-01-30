@@ -1,11 +1,4 @@
 
-// var table = ['','','',
-//              '','','',
-//              '','','',]
-
-// create an object
-// that has the cell id as the key
-// and the value for the key as the value in the cell on the screen
 
 var table = ['','','',
              '','','',
@@ -17,7 +10,8 @@ var turnCount = 0;
 // When the user plays their turn, check if the computer flag is true
 // If true; play the O move
 // If false; do nothing
-let initialAI = true;
+var initialAI = true;
+
 
 // FIND WINNER OF GAME
 var checkResult = function(){
@@ -60,12 +54,14 @@ function onClick(event) {
         checkResult();
         // if statment to switch from X to O  
         //////////////////////////////
-        // if(currentUser === 'X'){
-        //     currentUser = 'O'
+        if(currentUser === 'X'){
+            currentUser = 'O'
+            initialAI();
+            currentUser = 'X'
 
-        // } else {
-        //     currentUser = 'X'
-        // }
+        } else {
+            currentUser = 'X'
+        }
         /////////////////////////////////
         // else space is not open so do not play 
         // Check if computer is playing AI
@@ -92,7 +88,7 @@ function initialAI(){
         }
     }
 
-    initialAI();
+    
     } else {
         $('#message').text('Not honorable player');
     }
