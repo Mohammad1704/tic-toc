@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>tic tac toc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+    <link rel="stylesheet" href="styleCSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 <body>
-    <table>
-          
-     <tr> <td> <input type="text" id='0' value=""></td> <td><input type="text" id='1' value=""></td> <td> <input type="text" id='2' value=""></td> 
-     </tr>
-
-     <tr> 
-            <td><input type="text" id='3' value=""> </td>    <td> <input type="text" id='4' value=""></td>  <td> <input type="text" id='5' value=""></td> 
-     </tr>
-
-     <tr> 
-                <td><input type="text" id='6' value=""> </td>    <td> <input type="text" id='7' value=""></td>  <td> <input type="text" id='8' value=""></td> 
-     </tr>
-
-    </table>
+     <table id="board">
+                <tr>
+                <td class="cell" id='0'></td>
+                <td class="cell" id='1'></td>
+                <td class="cell" id='2'></td>
+                  </tr>
+                <tr>
+                <td class="cell" id='3'></td>
+                <td class="cell" id='4'></td>
+                <td class="cell" id='5'></td>
+                  </tr>
+                <tr>
+                <td class="cell" id='6'></td>
+                <td class="cell" id='7'></td>
+                <td class="cell" id='8'></td>
+                  </tr>
+                </table>
         
+                <h1 id='message' class="jackInTheBox" ></h1>
 
+<!-- reset button -->
+                <a href="index.html" data-title="Reset"></a>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> 
+    
+    <script src='styleJS.js'></script>
     <script src='main.js'></script>
 </body>
 </html>
