@@ -10,7 +10,7 @@ var turnCount = 0;
 // When the user plays their turn, check if the computer flag is true
 // If true; play the O move
 // If false; do nothing
-var initialAI = true;
+var AIPlaying = false;
  var gameOver = false;
 
 // FIND WINNER OF GAME
@@ -27,7 +27,7 @@ var checkResult = function(){
     ||(table[2] === table[4]) && (table[2] === table[6]) && table[2] !== '')
     { 
         gameOver = true;
-        $('#message').text('🎉🎊🎉🎊🎉player ' + currentUser + ' win!! 🎉🎊🎉🎊🎉');
+        $('#message').text('🎉🎊🎉🎊🎉 player ' + currentUser + ' win!! 🎉🎊🎉🎊🎉');
         $(event.target).off("click");
         $('.cell').off("click");
         $(event.target).off("onClick");
@@ -56,11 +56,13 @@ function onClick(event) {
         // if statment to switch from X to O  
         //////////////////////////////
         if(currentUser === 'X'){
-            currentUser = 'O'
-            if (gameOver === false ){
+            // currentUser = 'O'
+            if (gameOver === false && AIPlaying){
                 initialAI();
+            } else {
+                currentUser = 'O'
             }
-            currentUser = 'X'
+            // currentUser = 'X'
 
         } else {
             currentUser = 'X'
@@ -73,8 +75,7 @@ function onClick(event) {
           }
           
 function initialAI(){
-
-
+    currentUser = 'O'
         for ( var i=0 ; i < table.length ; i++){
             if (table[i] === ''){
                 getRandomInt(i);
@@ -88,6 +89,7 @@ function initialAI(){
                 table[i] = 'O';
                 // check for winner
                 checkResult();
+    currentUser = 'X'
                 // end loop because we found the match
                 break;
             }
@@ -102,5 +104,7 @@ function initialAI(){
 }
 
 $('.cell').on('click', onClick)
-
+$("#IAbutton").on("click", function () {
+    AIPlaying = true;
+});
  
