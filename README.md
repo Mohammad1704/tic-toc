@@ -29,7 +29,7 @@ I have  problems with the AI and my code not sorted very well I mean you can see
 
 - Acknowledgements/Thanks
  I would Like to thank all my friends who helps me and special thanks to
-Mr.uosman && Mr.Michael && Mr.Moath && Ahmad Almansour && theGirlWithGlasses && Mohammed Jameel && Salem Alshehri
+Mr.uosman && Mr.Michael && Mr.Moath && Ahmad Almansour && hala && Mohammed Jameel && Salem Alshehri
 
 ==========Resources=========
 www.cursor.cc               
